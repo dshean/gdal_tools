@@ -11,7 +11,7 @@ fi
 
 #See https://en.wikipedia.org/wiki/Shapefile for full list of sidecar file extensions
 extlist="shp shx dbf prj"
-extlist+=" sbn sbx cpg qix shp.xml"
+extlist+=" sbn sbx cpg qix qpj shp.xml"
 
 for ext in $extlist
 do
