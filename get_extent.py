@@ -15,5 +15,5 @@ fn = sys.argv[1]
 ds = gdal.Open(fn)
 extent = geolib.ds_extent(ds)
 #extent_geom = geolib.ds_geom_extent(ds)
-print ' '.join(map(str, extent))
+print(' '.join(map(str, extent)))
 #print ' '.join(map(str, extent_geom))
