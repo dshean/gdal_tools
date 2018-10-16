@@ -10,7 +10,7 @@ in=$1
 echo
 ls -lh $in
 
-opt="-co TILED=YES -co COMPRESS=LZW -co BIGTIFF=IF_SAFER -co COPY_SRC_OVERVIEWS=YES -co COMPRESS_OVERVIEW=YES"
+opt="-co TILED=YES -co COMPRESS=LZW -co BIGTIFF=IF_SAFER -co COPY_SRC_OVERVIEWS=YES -co COMPRESS_OVERVIEW=YES -co NUM_THREADS=ALL_CPUS"
 
 if gdalinfo $in | grep -q Float ; then 
     opt="$opt -co PREDICTOR=3"
