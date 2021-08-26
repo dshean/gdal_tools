@@ -17,4 +17,5 @@ gdaldem_opt+=' -compute_edges'
 az_list="315"
 
 #Requires GNU Parallel
-parallel "gdaldem hillshade $gdal_opt $gdaldem_opt -azimuth {1} {2} {2.}_hs_az{1}.tif" ::: $az_list ::: $@
+#parallel "gdaldem hillshade $gdal_opt $gdaldem_opt -azimuth {1} {2} {2.}_hs_az{1}.tif" ::: $az_list ::: $@
+parallel "gdaldem hillshade $gdal_opt $gdaldem_opt -azimuth {1} {2} {2.}_hs.tif" ::: $az_list ::: $@
