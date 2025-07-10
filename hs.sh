@@ -8,6 +8,10 @@ gdal_opt='-co TILED=YES -co COMPRESS=LZW -co BIGTIFF=IF_SAFER'
 gdaldem_opt=''
 #gdaldem_opt='-alg ZevenbergenThorne -compute_edges'
 gdaldem_opt+=' -compute_edges'
+#gdaldem_opt+=' -combined'
+#gdaldem_opt+=' -multidirectional'
+#gdaldem_opt+=' -igor'
+
 #Should check to see if srs is geographic, then automatically apply scale
 #gdaldem_opt+=' -s 111120'
 
@@ -18,4 +22,4 @@ az_list="315"
 
 #Requires GNU Parallel
 #parallel "gdaldem hillshade $gdal_opt $gdaldem_opt -azimuth {1} {2} {2.}_hs_az{1}.tif" ::: $az_list ::: $@
-parallel "gdaldem hillshade $gdal_opt $gdaldem_opt -azimuth {1} {2} {2.}_hs.tif" ::: $az_list ::: $@
+parallel "gdaldem hillshade $gdal_opt $gdaldem_opt -azimuth {1} {2} {2.}_hs.tif" ::: $az_list ::: "$@"
