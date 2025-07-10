@@ -14,6 +14,8 @@ opt="-co TILED=YES -co COMPRESS=LZW -co BIGTIFF=IF_SAFER -co COPY_SRC_OVERVIEWS=
 
 if gdalinfo $in | grep -q Float ; then 
     opt="$opt -co PREDICTOR=3"
+elif gdalinfo $in | grep -q Byte ; then
+    opt="$opt -co PREDICTOR=2"
 fi
 
 echo gdal_translate $opt $in /tmp/$$.tif
